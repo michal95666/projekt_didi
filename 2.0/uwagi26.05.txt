@@ -1,0 +1,8 @@
+magazyn_wyjsciowy
+-- potrzeba jeszcze zmiennej do stanow - wstrzymanie produkcji aby gdzies na stanowisku mozna bylo to zmieniac
+-- uwzgledniajac ze mamy miejsca wydzielone dla 4 produktow  magazynie to zaproponowalem oto schemat(patrz plik), chyba nie da sie tego bardziej upakowac?
+
+uniwersalne stanowisko tapicerskie
+- dodano zmienne surowcowe, zmieniaj¹ce siê w trakcie pracy
+- nie wpisywa³em warunków przejœæ, poniewa¿ nie ustaliliœmy jeszcze jak podejmowane bêd¹ decyzje nad czym pracowac
+- schemat zawiera w sobie fragmenty nale¿¹ce do klas "fotel" i "krzes³o" (kolor zielony i fioletowy). Pilnujcie, ¿eby nazwy by³y jednolite w obu plikach.
