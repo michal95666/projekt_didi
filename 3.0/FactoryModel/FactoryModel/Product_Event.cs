@@ -20,7 +20,7 @@ namespace FactoryModel
     {
         // variables
         private Product_Event_Type type;
-        private Product product;
+        private Product product;            // null if type process_started
         private Station receiver;
         private double timeout;             //after this time coordinator pass event to proper receiver
         private int amount;

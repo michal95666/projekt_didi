@@ -9,21 +9,29 @@ namespace FactoryModel
     class Process_Parameters
     {
         // definition of structure to store data
-        struct Product_Amounts
+        public struct Product_Amounts
         {
-            private Product product;
-            private int process_value;
+            // struct variables
+            public Product product { get; private set; }
+            public int process_value { get; private set; }
 
+            // struct methods
             public void SetValue(Product set_product, int set_value)
             {
                 product = set_product;
                 process_value = set_value;
             }
+
+            public Product_Amounts GetStruct()
+            {
+                return this;
+            }
+
         }
 
         // variables
-        private List<Product_Amounts> input_pairs;  // amounts of products required to start process
-        private List<Product_Amounts> output_pairs; // amounts of products which are results of process
+        public List<Product_Amounts> Input_pairs { get; }  // amounts of products required to start process
+        public List<Product_Amounts> Output_pairs { get; } // amounts of products which are results of process
         private double process_time;
 
         // methods
@@ -31,16 +39,36 @@ namespace FactoryModel
         {
             Product_Amounts p_a = new Product_Amounts();
             p_a.SetValue(set_product, set_value);
-            input_pairs.Add(p_a);
+            Input_pairs.Add(p_a);
         }
 
         public void AddOutputPair(ref Product set_product, int set_value)
         {
             Product_Amounts p_a = new Product_Amounts();
             p_a.SetValue(set_product, set_value);
-            output_pairs.Add(p_a);
+            Output_pairs.Add(p_a);
         }
 
+        public int GetSizeListIn()
+        {
+            return Input_pairs.Count;
+        }
 
+        public int GetSizeListOut()
+        {
+            return Output_pairs.Count;
+        }
+
+        public Product_Amounts GetInProductAmount(int index)
+        {
+            return Input_pairs[index].GetStruct();
+        }
+
+        public Product_Amounts GetOutProductAmount(int index)
+        {
+            return Output_pairs[index].GetStruct();
+        }
+
+        
     }
 }
