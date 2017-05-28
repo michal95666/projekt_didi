@@ -14,7 +14,6 @@ namespace FactoryModel
         private Process_Parameters station_parameters;
         public bool Enabled { get; set; }
         public bool Started { get; set; }
-        public double process_time { get; private set; }
         // methods
         public void PerformCommands(List<Coordinator_Command> commands)
         {
@@ -69,7 +68,7 @@ namespace FactoryModel
                     Product_Event event_tosend = new Product_Event(Product_Event_Type.process_started,
                                                                    ref product_tosend,
                                                                    ref station_tosend,
-                                                                   process_time,
+                                                                   station_parameters.cycle_time,
                                                                    0);
                     list_tosend.Add(event_tosend);
                 }
