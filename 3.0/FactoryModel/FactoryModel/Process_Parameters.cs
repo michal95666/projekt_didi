@@ -32,7 +32,7 @@ namespace FactoryModel
         // variables
         public List<Product_Amounts> Input_pairs { get; }  // amounts of products required to start process
         public List<Product_Amounts> Output_pairs { get; } // amounts of products which are results of process
-        public double cycle_time { get; }
+        public int cycle_time { get; }
 
         // methods
         public void AddInputPair(ref Product set_product, int set_value)

@@ -16,8 +16,8 @@ namespace FactoryModel
         public int Min_amount { get; private set; }
         public int Upper_warning { get; private set; }
         public int Lower_warning { get; private set; }
-        public double Call_time { get; private set; }
-        public double Delivery_time { get; private set; }
+        public int Call_time { get; private set; }
+        public int Delivery_time { get; private set; }
         public bool Call_flag { get; set; }
 
         // methods
@@ -35,7 +35,7 @@ namespace FactoryModel
             Lower_warning = set_lower_warning;
         }
 
-        public void SetParameters(int set_max_amount, int set_min_amount, int set_upper_warning, int set_lower_warning, double set_call_time, double set_delivery_time)
+        public void SetParameters(int set_max_amount, int set_min_amount, int set_upper_warning, int set_lower_warning, int set_call_time, int set_delivery_time)
         {
             Max_amount = set_max_amount;
             Min_amount = set_min_amount;

@@ -1,0 +1,3 @@
+C:\Users\Michał\documents\visual studio 2017\Projects\FactoryModel\FactoryModel\obj\Debug\FactoryModel.csprojResolveAssemblyReference.cache
+C:\Users\Michał\documents\visual studio 2017\Projects\FactoryModel\FactoryModel\obj\Debug\FactoryModel.Properties.Resources.resources
+C:\Users\Michał\documents\visual studio 2017\Projects\FactoryModel\FactoryModel\obj\Debug\FactoryModel.csproj.GenerateResource.Cache

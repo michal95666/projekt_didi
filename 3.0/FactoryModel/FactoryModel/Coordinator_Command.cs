@@ -13,22 +13,37 @@ namespace FactoryModel
         output
     };
 
+    enum Command_Type
+    {
+        none,
+        give,       // to output warehouse
+        take,        // to input warehouse
+        call,       // to input warehouse - generate delivery event (extortion from ouput warehouse)
+        stop       // to station - end process
+    };
+
     class Coordinator_Command
     {
         // variables
-        public Product Command_product { get; private set; }
-        public int Change_actual_amount { get; private set; }   // how many should be added/subtracted in register with Which_product
-        public bool Change_call_flag { get; private set; }
-        public Warehouse_Type Which_warehouse { get; private set; }
-        public int Execution_time { get; }      // time after which command is executed
+        public Command_Type Type { get; private set; }
+        public Station Sender_station { get; }           // from which station event was sent AND EVENTUALLY to which response should be sent
+        public Station Receiver_station { get; }        // to which station event is guided to
+        public Product Command_product { get; private set; }    // product which command is related to
+        public int Amount_modification { get; private set; }   // how many should be added/subtracted in register with Command_product
+        public bool Call_flag_modification { get; private set; }
+        public int Execution_time { get; set; }                      // time after which command is executed
         // methods
-        public Coordinator_Command(Product set_product, int set_amount, bool set_flag, Warehouse_Type set_warehouse)
+        public Coordinator_Command(Command_Type set_type, Station set_sender, Station set_receiver, Product set_product, int set_amount, bool set_flag, int set_time)
         {
+            Type = set_type;
+            Sender_station = set_sender;
+            Receiver_station = set_receiver;
             Command_product = set_product;
-            Change_actual_amount = set_amount;
-            Change_call_flag = set_flag;
-            Which_warehouse = set_warehouse;
+            Amount_modification = set_amount;
+            Call_flag_modification = set_flag;
+            Execution_time = set_time;
         }
 
     }
+
 }
